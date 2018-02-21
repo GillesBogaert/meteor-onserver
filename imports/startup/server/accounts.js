@@ -5,5 +5,7 @@ Accounts.onCreateUser(function onCreateUser(options, user) {
   if (!user.username) {
     user.username = user.email.split('@')[0];
   }
+  if (options.profile)
+  user.profile = options.profile;
   return user;
 });
