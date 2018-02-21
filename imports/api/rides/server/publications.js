@@ -7,7 +7,17 @@ Meteor.publish('Rides', function getRides() {
 });
 
 Meteor.publish('allUsers', function(){
-  return Meteor.users.find({}, {fields: {username: 1, emails: 1}})
+  return Meteor.users.find({}, {fields: {username: 1, emails: 1, profile : 1}})
   console.log(Meteor.users.find({}, {fields: {username: 1, emails: 1}}))
 
+});
+
+Meteor.publish('userData', function () {
+  if (this.userId) {
+    return Meteor.users.find({ _id: this.userId }, {
+      fields: { other: 1, things: 1 }
+    });
+  } else {
+    this.ready();
+  }
 });
