@@ -29,26 +29,26 @@ Meteor.startup(() => {
 
     console.log('End DB Seed');
   }
-  if (Rides.find().count() === 0) {
-    const seed = [
-      {
-        name : 'test',
-        startLocation : {
-          street : 'Paul lebrunstraat',
-          nr : '37',
-          City : 'Leuven',
-          Date : new Date(),
-        },
-        endLocation : {
-          street : 'Paul lebrunstraat End',
-          nr : '37 End',
-          City : 'Leuven End',
-          Date : new Date() + 'End',
-        }
-      }
-    ]
+  // if (Rides.find().count() === 0) {
+  //   const seed = [
+  //     {
+  //       name : 'test',
+  //       startLocation : {
+  //         street : 'Paul lebrunstraat',
+  //         nr : '37',
+  //         City : 'Leuven',
+  //         Date : new Date(),
+  //       },
+  //       endLocation : {
+  //         street : 'Paul lebrunstraat End',
+  //         nr : '37 End',
+  //         City : 'Leuven End',
+  //         Date : new Date() + 'End',
+  //       }
+  //     }
+  //   ]
 
-    Rides.insert(seed[0])
-    console.log('Added fixtures', Rides.find().fetch())
-  }
+  //   Rides.insert(seed[0])
+  //   console.log('Added fixtures', Rides.find().fetch())
+  // }
 });

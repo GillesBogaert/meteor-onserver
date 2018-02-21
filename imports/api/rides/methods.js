@@ -18,7 +18,7 @@ Meteor.methods({
   'rides.create': function (rides={}) {
     const ridesEntry = {...rides, userId: this.userId};
     const _id = Rides.insert(ridesEntry);
-    
     return { ...ridesEntry, _id };
   }
 });
+
