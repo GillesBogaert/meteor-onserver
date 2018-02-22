@@ -25,7 +25,7 @@ export const RidesSchema = new SimpleSchema({
     type : [String],
     index : true
   },
-  Departure_Date : {
+  DepartureDate : {
     type : String,
     index : true
   },
