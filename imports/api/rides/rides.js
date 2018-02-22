@@ -21,10 +21,10 @@ export const RidesSchema = new SimpleSchema({
     type: Boolean,
     index: true, 
   },
-  // drivers : {
-  //   type : [],
-  //   index : true
-  // },
+  drivers : {
+    type : [],
+    index : true
+  },
   // Departure_Date : {
   //   type : Date,
   //   index : true
