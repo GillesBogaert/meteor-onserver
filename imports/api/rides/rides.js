@@ -26,7 +26,7 @@ export const RidesSchema = new SimpleSchema({
     index : true
   },
   Departure_Date : {
-    type : Date,
+    type : String,
     index : true
   },
   Street : {
@@ -78,7 +78,7 @@ export const RidesSchema = new SimpleSchema({
     index: true
   },
   End_Date : {
-    type : Date,
+    type : String,
     index: true
   },
   End_Time : {
