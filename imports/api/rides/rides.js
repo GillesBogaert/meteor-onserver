@@ -22,7 +22,7 @@ export const RidesSchema = new SimpleSchema({
     index: true, 
   },
   drivers : {
-    type : [],
+    type : Array,
     index : true
   },
   // Departure_Date : {
