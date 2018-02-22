@@ -9,15 +9,35 @@ export const RidesSchema = new SimpleSchema({
     type: String,
     index: true
   },
-  Street : {
-    type: String, 
-    index: true
-  },
-  Nr : {
+  userId: {
     type: String,
     index: true
   },
-  Postal_Code : {
+  // confirmedByDriver : {
+  //   type: Boolean,
+  //   index: true,
+  // },
+  confirmedByUser : {
+    type: Boolean,
+    index: true, 
+  },
+  drivers : {
+    type : [],
+    index : true
+  },
+  Departure_Date : {
+    type : Date,
+    index : true
+  },
+  Street : {
+    type : String,
+    index: true
+  },
+  Nr : {
+    type : String,
+    index: true
+  },
+  Postal_Code: {
     type: String,
     index: true
   },
@@ -29,30 +49,42 @@ export const RidesSchema = new SimpleSchema({
     type: String,
     index: true
   },
-  Driver : {
-    type: String,
-    index: true
-  },
-  Des_Street : {
-    type: String,
-    index: true
-  },
   Catagory : {
     type: String,
     index: true
   },
+  RequiredDrivers : {
+    type : String,
+    index: true,
+  },
+  Des_street : {
+    type : String,
+    index: true
+  },
+  Des_nr : {
+    type : String,
+    index: true
+  },
+  Des_Postal_Code : {
+    type : String,
+    index: true
+  },
+  Des_City : {
+    type : String,
+    index: true
+  },
   TypeCar : {
-    type: String,
+    type : String,
     index: true
   },
   End_Date : {
-  type : String,
-  index: true
+    type : Date,
+    index: true
   },
   End_Time : {
     type : String,
-    index : true
-  }
+    index: true
+  },
 });
 
 Rides.attachSchema(RidesSchema);
