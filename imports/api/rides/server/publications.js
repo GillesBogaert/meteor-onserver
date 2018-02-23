@@ -4,7 +4,7 @@ import { Rides } from '../rides';
 
 // Rides
 Meteor.publish('Rides', function getRides() {
-   return Rides.find({}, { limit: 5, sort: { createdAt: -1 } });
+   return Rides.find({}, { limit: 300, sort: { createdAt: -1 } });
 });
 
 Meteor.publish('Rides.person', function getRides() {
