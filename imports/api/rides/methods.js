@@ -19,6 +19,11 @@ Meteor.methods({
     const ridesEntry = {...rides, userId: this.userId};
     const _id = Rides.insert(ridesEntry);
     return { ...ridesEntry, _id };
+  },
+  'rides.removeall' : function (rides={}) {
+      return Rides.remove({});
   }
 });
+
+
 
