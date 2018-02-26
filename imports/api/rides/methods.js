@@ -37,7 +37,7 @@ Meteor.methods({
   'rides.add.driver.current' : function ({rideId}) {
     const ride = Rides.findOne(rideId);
     Rides.update({ _id : rideId}, {
-        $set: {drivers : /*[...ride.drivers, this.userId]*/ "Test"}
+        $set: {drivers : [...ride.drivers, this.userId]}
     })
 }
 
