@@ -20,6 +20,10 @@ Meteor.methods({
     const _id = Rides.insert(ridesEntry);
     return { ...ridesEntry, _id };
   },
+  'rides.getRide' : function ({rideId}) {
+      return Rides.findOne(rideId);
+  },
+  
   'rides.removeall' : function (rides={}) {
       return Rides.remove({});
   },
@@ -36,9 +40,12 @@ Meteor.methods({
   },
   'rides.add.driver.current' : function ({rideId}) {
     const ride = Rides.findOne(rideId);
-    Rides.update({ _id : rideId}, {
+    Rides.update({ _id : new Mongo.Collection.ObjectID('wyEFqqyjivgWdjEri')}, {
         $set: {drivers : ["Test", "Test2"]}
     })
+},
+'rides.add.driver.test' : function ({}) {
+    const ride = Rides.findOne({}, { limit: 1, sort: { createdAt: -1 }})
 }
 
 });
