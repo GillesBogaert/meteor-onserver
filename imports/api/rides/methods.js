@@ -37,7 +37,7 @@ Meteor.methods({
   'rides.add.driver.current' : function ({rideId}) {
     new SimpleSchema({
         rideId: {type : String}
-    }).Validate({rideId})
+    }).validate({rideId})
 
     const ride = Rides.findOne(rideId);
     Rides.update(rideId, {
