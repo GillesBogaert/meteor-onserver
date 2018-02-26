@@ -35,10 +35,6 @@ Meteor.methods({
       })
   },
   'rides.add.driver.current' : function ({rideId}) {
-    new SimpleSchema({
-        rideId: {type : String}
-    }).validate({rideId})
-
     const ride = Rides.findOne(rideId);
     Rides.update(rideId, {
         $set: {drivers : [...ride.drivers, this.userId]}
