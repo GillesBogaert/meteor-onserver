@@ -20,6 +20,10 @@ Meteor.methods({
     const _id = Rides.insert(ridesEntry);
     return { ...ridesEntry, _id };
   },
+  'rides.getRide' : function ({rideId}) {
+      return Rides.findOne(rideId);
+  },
+  
   'rides.removeall' : function (rides={}) {
       return Rides.remove({});
   },
