@@ -22,7 +22,29 @@ Meteor.methods({
   },
   'rides.removeall' : function (rides={}) {
       return Rides.remove({});
-  }
+  },
+  'rides.add.driver' : function ({driverId, rideId}) {
+      new SimpleSchema({
+          driverId: {type : String },
+          rideId: {type : String}
+      }).Validate({driverId, rideId})
+
+      const ride = Rides.findOne(rideId);
+      Rides.update(rideId, {
+          $set: {drivers : [...ride.drivers, driverId]}
+      })
+  },
+  'rides.add.driver.current' : function ({rideId}) {
+    new SimpleSchema({
+        rideId: {type : String}
+    }).Validate({rideId})
+
+    const ride = Rides.findOne(rideId);
+    Rides.update(rideId, {
+        $set: {drivers : [...ride.drivers, this.userId]}
+    })
+}
+
 });
 
 
