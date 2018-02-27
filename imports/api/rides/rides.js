@@ -21,11 +21,10 @@ export const RidesSchema = new SimpleSchema({
     type: Boolean,
     index: true, 
   },
-  drivers : [ {
-      driverid : String,
-      distance : String
-    }]
-    ,
+  drivers : {
+    type : [settingsDriver],
+    index : true
+  },
   Date : {
     type : String,
     index : true
@@ -85,6 +84,16 @@ export const RidesSchema = new SimpleSchema({
   End_Time : {
     type : String,
     index: true
+  }
+});
+
+
+var settingsDriver = new SimpleSchema({
+  driverid : {
+    type : String
+  },
+  distance : {
+    type : String
   }
 });
 
