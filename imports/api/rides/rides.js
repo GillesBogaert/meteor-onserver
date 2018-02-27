@@ -4,7 +4,9 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 export const Rides = new Mongo.Collection('rides');
 
-export const RidesSchema = new SimpleSchema({
+const Schemas = {};
+
+Schemas.RidesSchema = new SimpleSchema({
   Naam: {
     type: String,
     index: true
@@ -110,7 +112,7 @@ var settingsDriver = new SimpleSchema({
   }
 });
 
-Rides.attachSchema(RidesSchema);
+Rides.attachSchema(Schemas.RidesSchema);
 
 Rides.allow({
   insert: () => true,
