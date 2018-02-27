@@ -21,15 +21,23 @@ export const RidesSchema = new SimpleSchema({
     type: Boolean,
     index: true, 
   },
+  // drivers : {
+  //   type : [Object],
+  //   index : true
+  // },
   drivers : {
-    type : [Object],
-    index : true
+    type : Array,
+    label : 'The resources for drivers'
   },
-  // drivers : Array,
-  // 'drivers.$' : Object,
-  // 'drivers.$.driverid' : String,
-  // 'drivers.$.distance' : String,
-
+  'drivers.$' : {
+    type : Object
+  },
+  'drivers.$.driverid' : {
+    type : String  
+  },
+  'drivers.$.distance' : {
+    type : String,
+  },
   Date : {
     type : String,
     index : true
