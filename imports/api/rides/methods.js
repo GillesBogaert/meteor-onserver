@@ -40,7 +40,7 @@ Meteor.methods({
   },
   'rides.add.driver.current' : function ({rideId}) {
     const ride = Rides.findOne(rideId);
-    Rides.update({ _id : new Mongo.Collection.ObjectID('wyEFqqyjivgWdjEri')}, {
+    Rides.update({ _id : 'wyEFqqyjivgWdjEri'}, {
         $set: {drivers : ["Test", "Test2"]}
     })
 },
