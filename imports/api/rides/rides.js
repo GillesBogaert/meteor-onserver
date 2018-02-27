@@ -32,7 +32,8 @@ Schemas.RidesSchema = new SimpleSchema({
     label : 'The resources for drivers'
   },
   'drivers.$' : {
-    type : Object
+    type : Object,
+    blackbox: true
   },
   'drivers.$.driverid' : {
     type : String  
