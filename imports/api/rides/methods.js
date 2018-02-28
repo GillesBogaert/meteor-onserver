@@ -21,7 +21,7 @@ Meteor.methods({
     return { ...ridesEntry, _id };
   },
   'rides.getRide' : function (rideId) {
-      return Rides.findOne(rideId);
+      return Rides.find({_id : rideId.toString()});
   },
   
   'rides.removeall' : function (rides={}) {
