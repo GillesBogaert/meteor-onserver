@@ -20,7 +20,7 @@ Meteor.publish('allUsers', function(){
 });
 
 Meteor.publish('availableDrivers', function(rideid) {
-  return Rides.find({}, {fields : {drivers: 100}})
+  return Rides.find({}, {fields : {drivers: 1}})
 })
 
 
