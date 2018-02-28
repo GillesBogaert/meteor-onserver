@@ -19,6 +19,11 @@ Meteor.publish('allUsers', function(){
 
 });
 
+Meteor.publish('availableDrivers', function(rideid) {
+  return Rides.find({}, {fields : {drivers: 100}})
+})
+
+
 Meteor.publish('userData', function () {
   if (this.userId) {
     return Meteor.users.find({ _id: this.userId }, {
