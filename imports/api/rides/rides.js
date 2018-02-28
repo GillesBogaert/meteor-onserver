@@ -41,6 +41,12 @@ Schemas.RidesSchema = new SimpleSchema({
   'drivers.$.distance' : {
     type : String,
   },
+  'drivers.$.First_Name' : {
+    type : String,
+  },
+  'drivers.$.Name' : {
+    type : String,
+  },
   Date : {
     type : String,
     index : true

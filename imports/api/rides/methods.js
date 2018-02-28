@@ -27,6 +27,17 @@ Meteor.methods({
   'rides.removeall' : function (rides={}) {
       return Rides.remove({});
   },
+
+  'ride.getAvailableDriver' : function (rideid) {
+
+    const Array = [Object]
+    const fields = Rides.findOne(rideId);
+    for ( var i = 0; i < fields["drivers"].length; i++){
+        fields["drivers"][i]["driverid"]
+    }
+    const ArrayDrivers = fields[0]["drivers"]
+
+  },
   'rides.add.driver' : function ({driverId, rideId}) {
       new SimpleSchema({
           driverId: {type : String },
@@ -38,9 +49,9 @@ Meteor.methods({
           $set: {drivers : [...ride.drivers, driverId]}
       })
   },
-  'rides.add.driver.current' : function (rideId, distance) {
+  'rides.add.driver.current' : function (rideId, distance, Name, First_Name) {
     const ride = Rides.findOne(rideId);
-    Rides.update({ _id : rideId.toString()}, {$push: {drivers : {driverid : this.userId, distance : distance}}
+    Rides.update({ _id : rideId.toString()}, {$push: {drivers : {driverid : this.userId, distance : distance, Name : Name, First_name : First_name}}
     })
 },
 'rides.add.driver.test' : function ({}) {
