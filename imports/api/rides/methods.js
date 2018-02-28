@@ -20,23 +20,12 @@ Meteor.methods({
     const _id = Rides.insert(ridesEntry);
     return { ...ridesEntry, _id };
   },
-  'rides.getRide' : function ({rideId}) {
+  'rides.getRide' : function (rideId) {
       return Rides.findOne(rideId);
   },
   
   'rides.removeall' : function (rides={}) {
       return Rides.remove({});
-  },
-
-  'ride.getAvailableDriver' : function (rideid) {
-
-    const Array = [Object]
-    const fields = Rides.findOne(rideId);
-    for ( var i = 0; i < fields["drivers"].length; i++){
-        fields["drivers"][i]["driverid"]
-    }
-    const ArrayDrivers = fields[0]["drivers"]
-
   },
   'rides.add.driver' : function ({driverId, rideId}) {
       new SimpleSchema({
