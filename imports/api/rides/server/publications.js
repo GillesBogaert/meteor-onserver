@@ -21,7 +21,7 @@ Meteor.publish('allUsers', function(){
 
 Meteor.publish('availableDrivers', function(rideid) {
   //return Rides.find({ _id : rideid}, {fields : {drivers: 1}})
-  return Rides.find({})
+  return Rides.find({}, { limit: 300, sort: { createdAt: -1 } });
 })
 
 
