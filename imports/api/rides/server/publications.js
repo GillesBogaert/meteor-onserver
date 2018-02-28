@@ -19,7 +19,7 @@ Meteor.publish('allUsers', function(){
 
 });
 
-Meteor.publish('availableDrivers', function(rideid) {
+Meteor.publish('availableDrivers', function publishfunction(rideid) {
   //return Rides.find({ _id : rideid}, {fields : {drivers: 1}})
   return Rides.find({ _id : 'wyEFqqyjivgWdjEri'}, {fields : {drivers : 1}, limit: 300, sort: { createdAt: -1 } });
 })
