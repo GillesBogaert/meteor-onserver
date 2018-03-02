@@ -43,6 +43,10 @@ Meteor.methods({
     Rides.update({ _id : rideId.toString()}, {$push: {drivers : {driverid : this.userId, distance : distance, Name : Name, First_Name : First_Name}}
     })
 },
+'rides.add.driver.confirmed' : function (rideId, distance, Name, First_Name) {
+    Rides.update({ _id : rideId.toString()}, {$push: {confirmedDrivers : {driverid : this.userId, distance : distance, Name : Name, First_Name : First_Name}}
+    })
+},
 'rides.add.driver.test' : function ({}) {
     const ride = Rides.findOne({}, { limit: 1, sort: { createdAt: -1 }})
 }

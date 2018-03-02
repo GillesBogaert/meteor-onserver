@@ -23,10 +23,6 @@ Schemas.RidesSchema = new SimpleSchema({
     type: Boolean,
     index: true, 
   },
-  // drivers : {
-  //   type : [Object],
-  //   index : true
-  // },
   drivers : {
     type : Array,
     label : 'The resources for drivers'
@@ -45,6 +41,26 @@ Schemas.RidesSchema = new SimpleSchema({
     type : String,
   },
   'drivers.$.Name' : {
+    type : String,
+  },
+  confirmedDrivers : {
+    type : Array,
+    blackbox: true
+  },
+  'confirmedDrivers.$' : {
+    type : Object,
+    blackbox: true
+  },
+  'confirmedDrivers.$.driverid' : {
+    type : String  
+  },
+  'confirmedDrivers.$.distance' : {
+    type : String,
+  },
+  'confirmedDrivers.$.First_Name' : {
+    type : String,
+  },
+  'confirmedDrivers.$.Name' : {
     type : String,
   },
   Date : {
