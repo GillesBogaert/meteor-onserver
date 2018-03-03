@@ -52,16 +52,13 @@ Meteor.methods({
 },
 'sendmail.factuur' : function (mailFields) {
     console.log("Sending email now...")
-    this.unblock();
 
-    Meteor.Mailgun.send({
-        to: mailFields.to,
-        from: mailFields.from,
-        subject: mailFields.subject,
-        text: mailFields.text,
-        html: mailFields.html
-    });
-    console.log("email sent!");
+    Email.send({
+        to: "imgillesbogaert@gmail.com",
+        from: "info@gmail.com",
+        subject: "Example Email",
+        text: "The contents of our email in plain text.",
+      });
 }
 });
 
