@@ -6,6 +6,7 @@ import { Locations } from '../../api/locations/locations';
 import { Rides } from '../../api/rides/rides';
 
 Meteor.startup(() => {
+  process.env.MAIL_URL = "";
   if (Locations.find().count() === 0) {
     const fuelStations = JSON.parse(Assets.getText('alt_fuel_stations.json'));
 
