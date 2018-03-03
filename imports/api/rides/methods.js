@@ -52,7 +52,6 @@ Meteor.methods({
 },
 'sendmail.factuur' : function (mailfields) {
     console.log("Sending email now...")
-    check([mailFields.to, mailFields.from, mailFields.subject, mailFields.text, mailFields.html], [String]);
     this.unblock();
 
     Meteor.Mailgun.send({
