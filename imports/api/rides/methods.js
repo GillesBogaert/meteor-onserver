@@ -52,13 +52,14 @@ Meteor.methods({
 },
 'sendmail.factuur' : function (mailFields) {
     console.log("Sending email now...")
-
+    this.unblock();
     Email.send({
         to: "imgillesbogaert@gmail.com",
         from: "info@gmail.com",
         subject: "Example Email",
         text: "The contents of our email in plain text.",
       });
+      console.log("Email has been sent!")
 }
 });
 
