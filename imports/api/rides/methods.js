@@ -50,7 +50,7 @@ Meteor.methods({
 'rides.add.driver.test' : function ({}) {
     const ride = Rides.findOne({}, { limit: 1, sort: { createdAt: -1 }})
 },
-'sendmail.factuur' : function (mailfields) {
+'sendmail.factuur' : function (mailFields) {
     console.log("Sending email now...")
     this.unblock();
 
