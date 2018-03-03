@@ -10,4 +10,6 @@ Meteor.startup(() => {
         username : 'postmaster@sandboxa0cfaf6dcd374569841b2be96b8b4961.mailgun.org',
         password : 'a133541ffdf8edceb51843e372b5425f-e89319ab-0e77013b'
     });
+
+    process.env.MAIL_URL = 'smtps://postmaster@sandboxa0cfaf6dcd374569841b2be96b8b4961.mailgun.org:a133541ffdf8edceb51843e372b5425f-e89319ab-0e77013b@smtp.mailgun.org:587'
 });
