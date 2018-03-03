@@ -49,9 +49,21 @@ Meteor.methods({
 },
 'rides.add.driver.test' : function ({}) {
     const ride = Rides.findOne({}, { limit: 1, sort: { createdAt: -1 }})
+},
+'sendmail.factuur' : function (mailfields) {
+    console.log("Sending email now...")
+    check([mailFields.to, mailFields.from, mailFields.subject, mailFields.text, mailFields.html], [String]);
+    this.unblock();
+
+    Meteor.Mailgun.send({
+        to: mailFields.to,
+        from: mailFields.from,
+        subject: mailFields.subject,
+        text: mailFields.text,
+        html: mailFields.html
+    });
+    console.log("email sent!");
 }
-
-
 });
 
 
