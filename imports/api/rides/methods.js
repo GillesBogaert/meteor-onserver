@@ -44,7 +44,7 @@ Meteor.methods({
     })
 },
 'rides.add.driver.confirmed' : function (rideId, driverid, distance, Name, First_Name) {
-    Rides.update({ _id : rideId.toString()}, {$push: {confirmedDrivers : {driverid : driverid, distance : distance, Name : Name, First_Name : First_Name}}
+    Rides.update({ _id : rideId.toString()}, {$set : {confirmedByUser : true}}, {$push: {confirmedDrivers : {driverid : driverid, distance : distance, Name : Name, First_Name : First_Name}}
     })
 },
 'rides.add.driver.test' : function ({}) {
