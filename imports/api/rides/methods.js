@@ -1,7 +1,7 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { Meteor } from 'meteor/meteor';
-
+import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
 import {Rides} from './rides'
 
 export const findOneRide = new ValidatedMethod({
@@ -51,15 +51,38 @@ Meteor.methods({
     const ride = Rides.findOne({}, { limit: 1, sort: { createdAt: -1 }})
 },
 'sendmail.factuur' : function () {
-    console.log("Sending email now...")
+    // console.log("Sending email now...")
+    console.log("Starting sendmail.factuur call now...")
     this.unblock();
-    Email.send({
-        to: "imgillesbogaert@gmail.com",
-        from: "info@gmail.com",
-        subject: "Example Email",
-        text: "The contents of our email in plain text.",
-      });
-      console.log("Email has been sent!")
+
+    const page1 = PDFPage
+        .modify(0)
+        .drawText('This is test1', {
+            x : 5,
+            y : 5,
+            color : '#000000'
+        })
+        .drawText('This is test2', {
+            x : 10,
+            y : 10,
+            color : '#000000'
+        });
+    
+    const existingPDF = 'TemplateFactuur.pdf'
+    PDFDocument.modify(existingPDF)
+    .modifyPages(page1)
+    .write()
+    .then(path => {
+        console.log('PDF modified at: ' + path);
+    });
+    console.log("Ending sendmail.factuur call now...")
+    // Email.send({
+    //     to: "imgillesbogaert@gmail.com",
+    //     from: "info@gmail.com",
+    //     subject: "Example Email",
+    //     text: "The contents of our email in plain text.",
+    //   });
+    //   console.log("Email has been sent!")
 }
 });
 
