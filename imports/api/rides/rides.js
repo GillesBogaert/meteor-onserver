@@ -15,7 +15,7 @@ Schemas.RidesSchema = new SimpleSchema({
     type: String,
     index: true
   },
-  confirmedByDriver : {
+  rideFinished : {
     type: Boolean,
     index: true,
   },
