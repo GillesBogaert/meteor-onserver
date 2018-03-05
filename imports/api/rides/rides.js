@@ -97,19 +97,23 @@ Schemas.RidesSchema = new SimpleSchema({
   },
   Des_street : {
     type : String,
-    index: true
+    index: true,
+    optional : true,
   },
   Des_nr : {
     type : String,
-    index: true
+    index: true,
+    optional : true,
   },
   Des_Postal_Code : {
     type : String,
-    index: true
+    index: true,
+    optional : true,
   },
   Des_City : {
     type : String,
-    index: true
+    index: true,
+    optional : true,
   },
   TypeCar : {
     type : String,
