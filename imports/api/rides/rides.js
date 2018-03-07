@@ -127,14 +127,26 @@ Schemas.RidesSchema = new SimpleSchema({
     type : String,
     index: true
   },
-  user : {
+  userPhone : {
+    type : String,
+    index: true
+  },
+  userFirstName : {
+    type : String,
+    index: true
+  },
+  userName : {
+    type : String,
+    index: true
+  },
+  userEmail : {
     type : String,
     index : true,
   },
   userobject : {
     type : Object,
     optional: true,
-      blackbox: true,
+    blackbox: true,
   }
 });
 
