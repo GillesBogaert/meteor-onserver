@@ -61,7 +61,7 @@ Meteor.methods({
     const emailData = {
         vergoeding : options.vergoeding,
         kostenUur : options.kostenUur,
-        total : options, total,
+        total : options.total,
     }
 
     Email.send({
