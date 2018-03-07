@@ -52,7 +52,7 @@ Meteor.methods({
 },
 'user.get' : function (userid){
     console.log(userid)
-    return Meteor.users.find({_id : userid});
+    return Meteor.users.find({_id : userid.toString()});
 },
 'sendmail.factuur' : function (options) {
 
