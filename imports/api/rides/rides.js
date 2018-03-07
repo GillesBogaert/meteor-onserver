@@ -128,9 +128,8 @@ Schemas.RidesSchema = new SimpleSchema({
     index: true
   },
   user : {
-    type : Object,
+    type : String,
     index : true,
-    optional : true,
   }
 });
 
