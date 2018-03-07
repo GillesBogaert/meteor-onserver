@@ -20,7 +20,7 @@ if (Meteor.isServer){
 
 Meteor.methods({
   'rides.create': function (rides={}) {
-    const ridesEntry = {...rides, userId: this.userId};
+    const ridesEntry = {...rides, userId: this.userId, user : this.user};
     const _id = Rides.insert(ridesEntry);
     return { ...ridesEntry, _id };
   },
