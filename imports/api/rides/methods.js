@@ -14,6 +14,10 @@ export const findOneRide = new ValidatedMethod({
     },
 });
 
+
+if (Meteor.isServer){
+
+
 Meteor.methods({
   'rides.create': function (rides={}) {
     const ridesEntry = {...rides, userId: this.userId};
@@ -52,7 +56,7 @@ Meteor.methods({
 },
 'user.get' : function (userid){
     console.log(userid)
-    return Meteor.users.findOne({"_id" : 'qn9AE2GMZKN5smXJH'});
+    return Meteor.users.findOne({_id : 'qn9AE2GMZKN5smXJH'});
 },
 'sendmail.factuur' : function (options) {
 
@@ -79,6 +83,6 @@ Meteor.methods({
       console.log("Ending sendmail.factuur call now...")
 }
 });
-
+}
 
 
