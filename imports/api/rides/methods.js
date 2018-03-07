@@ -66,6 +66,8 @@ Meteor.methods({
         vergoeding : options.vergoeding,
         kostenUur : options.kostenUur,
         total : options.total,
+        createdDate : "9/03/2018",
+        dueDate : "9/04/2018"
     }
 
     Email.send({
@@ -74,6 +76,8 @@ Meteor.methods({
         subject: "Factuur GetDriven " + Date(),
         html: SSR.render('htmlEmail', emailData),
       });
+      Rides.update({ _id : rideId.toString()}, {$set : { rideFinished : true}
+    })
 
       console.log("Email has been sent!")
       console.log("Ending sendmail.factuur call now...")
