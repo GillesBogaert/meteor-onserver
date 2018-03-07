@@ -56,7 +56,7 @@ Meteor.methods({
 },
 'user.get' : function (userid){
     console.log(userid)
-    return Meteor.users.findOne({_id : 'qn9AE2GMZKN5smXJH'});
+    return Meteor.users.find({_id : 'qn9AE2GMZKN5smXJH'}).fetch()[0];
 },
 'sendmail.factuur' : function (options) {
 
