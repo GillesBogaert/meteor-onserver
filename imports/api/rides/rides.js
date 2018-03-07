@@ -126,6 +126,11 @@ Schemas.RidesSchema = new SimpleSchema({
   End_Time : {
     type : String,
     index: true
+  },
+  user : {
+    type : Object,
+    index : true,
+    optional : true,
   }
 });
 
