@@ -50,8 +50,8 @@ Meteor.methods({
 'rides.add.driver.test' : function ({}) {
     const ride = Rides.findOne({}, { limit: 1, sort: { createdAt: -1 }})
 },
-'user.get' : function (userid){
-    console.log(userid)
+'user.get' : function ({userid}){
+    console.log({userid})
     return Meteor.users.find({_id : userid.toString()});
 },
 'sendmail.factuur' : function (options) {
