@@ -76,7 +76,7 @@ Meteor.methods({
         subject: "Factuur GetDriven " + Date(),
         html: SSR.render('htmlEmail', emailData),
       });
-      Rides.update({ _id : rideId.toString()}, {$set : { rideFinished : true}
+      Rides.update({ _id : options.rideId.toString()}, {$set : { rideFinished : true}
     })
 
       console.log("Email has been sent!")
