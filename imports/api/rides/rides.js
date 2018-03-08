@@ -1,10 +1,18 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-
+// Collection of rides
+// Based on mongoDB 
 export const Rides = new Mongo.Collection('rides');
 
+
+// Object of all schema we will use
+
 const Schemas = {};
+
+
+// Schema to validate the object values for the Rides collection
+// Uses a simpleSchema that we then attach to the Rides collection
 
 Schemas.RidesSchema = new SimpleSchema({
   Naam: {
@@ -151,16 +159,11 @@ Schemas.RidesSchema = new SimpleSchema({
 });
 
 
-var settingsDriver = new SimpleSchema({
-  driverid : {
-    type : String
-  },
-  distance : {
-    type : String
-  }
-});
-
+// Uses a simpleSchema that we then attach to the Rides collection
 Rides.attachSchema(Schemas.RidesSchema);
+
+
+// Permissions on the Rides collection 
 
 Rides.allow({
   insert: () => true,

@@ -1,5 +1,12 @@
 import React from 'react';
 
+
+
+/**
+ * Home page of meteor application
+ */
+
+
 const App = () => (
   <div>
     <h1>...</h1>
